@@ -1,0 +1,11 @@
+<div>
+  <input type="text" autofocus #input (keydown.enter)="getWeatherByCityName(input)" placeholder="City..." />
+</div>
+<br/>
+<div *ngIf="weather != null">
+Country:{{weather.getCountry()}}
+<br />
+City:{{weather.getName()}}
+<br/>
+Temperature:{{weather.getTemp()}}°F
+</div>
