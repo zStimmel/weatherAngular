@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Http,Response} from '@angular/http';
+import {Response} from '@angular/http';
+import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs/Observable';
 import {Weathermodel} from '../model/Weathermodel'
 import 'rxjs/add/operator/map';
@@ -9,14 +10,14 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class WeatherService {
 
-  private uri = "http://localhost:8080/weather/";
+  readonly uri = "http://localhost:8080/weather/";
 
-  constructor(private http : Http) { }
+  constructor(private http : HttpClient) { }
 
-  getWeather(city:string):Observable<any>{
-    return this.http.get(this.uri+city).map((response:Response) => {
+  getWeather(city:string):Observable<Weathermodel>{
+    return this.http.get<Weathermodel>(this.uri+city).map((response) => {
       console.log(response);
-      return new Weathermodel(response.json());
+      return new Weathermodel(response);
     });
   }
 }

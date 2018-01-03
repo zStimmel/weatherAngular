@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import {WeatherComponent} from './component/weather/weather.component';
 import {WeatherService} from './service/weather.service'
 import { AppComponent } from './app.component';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+
 
 
 
@@ -14,7 +15,7 @@ import {HttpModule} from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {WeatherComponent} from './component/weather/weather.component';
 import {WeatherService} from './service/weather.service'
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -10,7 +10,7 @@ import {HttpModule} from '@angular/http';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[HttpModule],
+      imports:[HttpClientModule],
       declarations: [
         AppComponent,
         WeatherComponent

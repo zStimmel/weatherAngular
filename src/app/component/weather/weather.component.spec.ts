@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {WeatherService} from '../../service/weather.service'
 import { WeatherComponent } from './weather.component';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('WeatherComponent', () => {
   let component: WeatherComponent;
@@ -9,7 +9,7 @@ describe('WeatherComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[HttpModule],
+      imports:[HttpClientModule],
       declarations: [ WeatherComponent ],
       providers:[WeatherService]
     })
@@ -22,7 +22,7 @@ describe('WeatherComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
 });
