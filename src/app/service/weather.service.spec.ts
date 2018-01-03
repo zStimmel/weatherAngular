@@ -47,7 +47,7 @@ describe('WeatherService', () => {
 
       service.getWeather("Wilmington").subscribe(weather => {
         expect(weather.getName()).toEqual(mockweather.name);
-        expect(weather.getTemp()).toEqual(18); //needs to be 18F not 265KELVIN
+        expect(weather.getTemp()).toEqual(18); //needs to be 18F not 265KELVIN/getTemp() converts
         expect(weather.getCountry()).toEqual(mockweather.sys.country);
       });
 
