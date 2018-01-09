@@ -17,7 +17,10 @@ export class WeatherService {
   getWeather(city:string):Observable<Weathermodel>{
     return this.http.get<Weathermodel>(this.uri+city).map((response) => {
       console.log(response);
-      return new Weathermodel(response);
+      if(response != null){
+        return new Weathermodel(response);
+      }
+      return null;
     });
   }
 }

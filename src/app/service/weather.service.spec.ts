@@ -2,11 +2,6 @@ import { TestBed, getTestBed, inject } from '@angular/core/testing';
 import { WeatherService } from './weather.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-
-
-
-
-
 describe('WeatherService', () => {
   let injector: TestBed;
   let service: WeatherService;
